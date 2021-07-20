@@ -1,0 +1,2 @@
+class PorfileController < ApplicationController
+end

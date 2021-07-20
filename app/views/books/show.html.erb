@@ -1,0 +1,9 @@
+<h1>ブックの詳細ページ</h1>
+  <% if flash[:notice] %>
+    <p id="notice">
+      <%= flash[:notice]  %>
+    </p>
+  <% end %>
+<%=@book.title %>
+<%=@book.body %>
+

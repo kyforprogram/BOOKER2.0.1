@@ -1,0 +1,23 @@
+<h1>ユーザープロフィール</h1>
+
+<h2>User info</h2>
+<%= attachment_image_tag @user, :profile_image, :fill, 80, 80 ,fallback: "no-image.png" %>
+<table class="table">
+  <tr></tr>
+  <tr>
+    <th>name</th>
+    <th><%= @user.name %></th>
+  </tr>
+  <tr>
+    <% if @user.id == current_user.id %>
+      <th>email</th>
+      <th><%= @user.email %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <th>introduction</th>
+    <th><%= @user.introduction %></th>
+  </tr>
+</table>
+
+<%= link_to '',edit_user_path(@user),class:"btn btn-outline-secondary btn-block fas fa-user-cog" %>
