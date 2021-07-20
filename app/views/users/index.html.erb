@@ -1,9 +1,10 @@
 <h1>ユーザー</h1>
 
 <% @users.each do |user| %>
-<%= attachment_image_tag user, :profile_image, :fill, 10, 10, fallback: "no-image.png", class:"bd-placeholder-img align-self-center mx-3"%>
-<%= link_to user_path(user) do %>
+<%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no-image.png", class:"bd-placeholder-img align-self-center mx-3"%>
 <%= user.name %>
+<%= link_to user_path(user) do %>
+<p>show</p>
 <% end %>
 <%= user.introduction %>
 <% end %>
