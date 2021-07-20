@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
+
 
   def index
     @books = Book.all
@@ -22,12 +24,16 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    if @book.user != current_user
+      redirect_to books_path, alert: 'you can not edit this book '
+    end
+
   end
 
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-    redirect_to book_path(@book), notice: 'Book was successfully updated.'
+    redirect_to book_path(@book), notice: 'You have updated book successfully.'
     else
     render :edit
     end

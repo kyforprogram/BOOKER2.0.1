@@ -16,3 +16,24 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+
+
+
+
+
+#error_explanation {
+    color: red;
+    text-align: center;
+    list-style: inside;
+    background-color: gainsboro;
+}
+
+
+@media (min-width: 992px){
+
+.navbar-expand-lg {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+}
