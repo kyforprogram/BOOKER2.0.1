@@ -11,7 +11,7 @@
       <%= render 'books/newbook', book: @book_new %>
     </div>
         <div class="col-md-8 offset-md-1">
-          <h1>Users</h1>
+          <h1>Books</h1>
           <table class="table">
             <thead>
                 <tr>
@@ -25,7 +25,7 @@
               <% @book.each do |book| %>
                 <tr>
                   <td><%= attachment_image_tag book.user, :profile_image, fallback: "no-image.png", size:"40x40", class:"bd-placeholder-img align-self-center mx-3"%></td>
-                  <td><%=link_to book.title %></td>
+                  <td><%=link_to book.title,book_path(book) %></td>
                   <td><%= book.body %></td>
                 </tr>
               <% end %>
