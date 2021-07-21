@@ -1,0 +1,30 @@
+      <!--
+      %= render 'users/info', user: @user %>
+      -->
+
+
+
+      <h2>User info</h2>
+      <%= attachment_image_tag user, :profile_image,fallback: "no-image.png", size:"100x100" %>
+        <table class="table">
+          <tbody>
+            <tr></tr>
+            <tr>
+              <th>name</th>
+              <th><%= user.name %></th>
+            </tr>
+            <tr>
+              <% if user.id == current_user.id %>
+                <th>email</th>
+                <th><%= user.email %></th>
+              <% end %>
+            </tr>
+            <tr>
+              <th>introduction</th>
+              <th><%= simple_format user.introduction %></th>
+            </tr>
+          </tbody>
+        </table>
+      <div class="row">
+        <%= link_to '',edit_user_path(user),class:"btn btn-outline-secondary btn-block fas fa-user-cog" %>
+      </div>
