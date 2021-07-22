@@ -1,20 +1,21 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
 
-
   def index
     @books = Book.all
-    @book_new = Book.new
     @user = current_user
+    @book_new = Book.new
   end
 
   def create
     @books = Book.all
-    @book = Book.new(book_params)
-    @book.user_id = current_user.id
-    if @book.save
-    redirect_to book_path(@book), notice: 'Book was successfully created.'
+    @book_new = Book.new(book_params)
+    @book_new.user_id = current_user.id
+
+    if @book_new.save
+    redirect_to book_path(@book_new), notice: 'Book was successfully created.'
     else
+    @user = current_user
     render :index
     end
   end
@@ -27,7 +28,7 @@ class BooksController < ApplicationController
   def edit
     @book = Book.find(params[:id])
     if @book.user != current_user
-      redirect_to books_path, alert: 'you can not edit this book '
+      redirect_to books_path, alert: "errors!! you can not edit #{@book.title}"
     end
 
   end
@@ -35,7 +36,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-    redirect_to book_path(@book), notice: "You have updated #{:book.title} successfully."
+    redirect_to book_path(@book), notice: "title:#{@book.title} Updated successfully."
     else
     render :edit
     end
