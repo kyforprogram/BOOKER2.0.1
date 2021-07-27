@@ -23,6 +23,19 @@
             <td>
               <%=  simple_format @book.body %>
             </td>
+            <td>
+              <% if current_user.already_favorited?(@book) %>
+                <%= link_to book_favorites_path(@book), method: :delete do %>
+                  <i class="fas fa-heart"></i>
+                <% end %>
+                <%= @book.favorites.count %>
+              <% else %>
+                <%= link_to book_favorites_path(@book), method: :post do %>
+                  <i class="far fa-heart"></i>
+                <% end %>
+                <%= @book.favorites.count %>
+              <% end %>
+            </td>
             <% if @book.user_id == current_user.id %>
             <td>
               <%= link_to "Edit", edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}"  %>
