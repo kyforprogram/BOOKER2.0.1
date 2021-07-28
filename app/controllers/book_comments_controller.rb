@@ -2,13 +2,12 @@ class BookCommentsController < ApplicationController
 
   def create
     @book = Book.find(params[:book_id])
-    @comment = current_user.book_comments.new(book_comment_params)
-    @comment.book_id = @book.id
-    if @comment.save
-      redirect_to book_path(@book)
+    @book_comment = current_user.book_comments.new(book_comment_params)
+    @book_comment.book_id = @book.id
+    if @book_comment.save
+    redirect_back(fallback_location: root_path)
     else
     @book_new = Book.new
-    @book_comment = BookComment.new
       render 'books/show'
     end
   end
