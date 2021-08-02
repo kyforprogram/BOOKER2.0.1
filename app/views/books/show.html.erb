@@ -46,7 +46,7 @@
           </tr>
         </tbody>
       </table>
-      <table>
+      <table class="table table-dark">
             <th>コメント件数：<%= @book.book_comments.count %></th>
             <% @book.book_comments.each do |book_comment| %>
             <% book_comment_user = book_comment.user %>
@@ -59,7 +59,7 @@
                 </td>
                 <td>
                   <%= book_comment.created_at.strftime('%Y/%m/%d') %><br>
-                  <%= book_comment.comment %>
+                  <%= simple_format book_comment.comment %>
                 </td>
                 <td>
                   <% if book_comment.user == current_user %>
