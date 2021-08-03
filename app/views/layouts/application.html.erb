@@ -11,30 +11,28 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-  <main>
-    <div class="container">
-      <div class="row">
-        <div class=" center-block">
-          <%= render 'layouts/search' %>
-        </div>
+    <header>
+      <%= render 'layouts/header' %>
+    </header>
+    <div class="search-form">
+      <%= render 'layouts/search' %>
+    </div>
+    <% if flash[:notice] %>
+      <div class="alert alert-success" role="alert">
+        <p><%= notice %></p>
       </div>
-    </div>
-    <div class="container">
-      <% if flash[:notice] %>
-        <div class="alert alert-success" role="alert">
-          <p><%= notice %></p>
-        </div>
-      <% end %>
-      <% if flash[:alert] %>
-        <div class="alert alert-danger" role="alert">
-          <p><%= alert %></p>
-        </div>
-      <% end %>
-    </div>
-    <%= yield %>
-  </main>
-    <%= render 'layouts/footer' %>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger" role="alert">
+        <p><%= alert %></p>
+      </div>
+    <% end %>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 
 </html>
