@@ -17,10 +17,15 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
-  def already_favorited?(book)
-    self.favorites.exists?(book_id: book.id)
-    # trueならいいねをはずすfalseならいいねを付けます
+  # def already_favorited?(book)
+  #   self.favorites.exists?(book_id: book.id)
+  #   # trueならいいねをはずすfalseならいいねを付けます
+  # end
+  def already_favorited?(book_id)
+  favorites.where(book_id: book_id).exists?
   end
+
+
   def follow(user_id)
     active_relationships.create(followed_id: user_id)
   end

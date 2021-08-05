@@ -32,8 +32,8 @@
                 <%= link_to book_favorites_path(@book), method: :post do %>
                   <i class="far fa-heart"></i>
                 <% end %>
-                <%= @book.favorites.count %>
               <% end %>
+                <%= @book.favorites.count %>
             </td>
             <% if @book.user_id == current_user.id %>
             <td>
