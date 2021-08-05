@@ -3,11 +3,11 @@
 <!--ユーザーがサインしてるときに表示-->
 
   <%= form_with url:search_path, method: :get, local: true do |form| %>
-    <%= form.text_field 'search[keyword]' %>
-    <%= form.select 'search[model]', options_for_select({ "User" => "user" , "Book" => "book"}) %>
+    <%= form.text_field '[keyword]' %>
+    <%= form.select '[model]', options_for_select({ "User" => "user" , "Book" => "book"}) %>
 <!--options_for_selectでプルダウン-->
 <!--search[model]',options_for_select()内は{"表示名(User)" => "参照したいモデル名(user)"}-->
-    <%= form.select 'search[way]', options_for_select({ "完全一致" => "parfect_match", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partical" }) %>
+    <%= form.select '[way]', options_for_select({ "完全一致" => "parfect_match", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partical" }) %>
 <!--# {"表示名(完全一致)" => "変数名(parfect_match)"}-->
     <%= form.submit :"検索" %>
   <% end %>

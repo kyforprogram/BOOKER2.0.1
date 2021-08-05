@@ -10,6 +10,7 @@ class FavoritesController < ApplicationController
     # redirect_backは一覧画面と詳細画面でいいねをしたときに
     # 一つ戻るようにして詳細画面でいいねしたときは一覧画面に戻り
     # 一覧画面でいいねしたときは一覧画面に戻る
+    # redirect_to request.refere
   end
 
 
