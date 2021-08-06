@@ -15,7 +15,7 @@
          <tr>
           <td><%= attachment_image_tag user, :profile_image, fallback: "no-image.png", size:"40x40", class:"bd-placeholder-img align-self-center mx-3"%></td>
           <td><%= user.name %></td>
-          <td>フォロー数: <%= user.following.count %></td>
+          <td>フォロー数: <%= user.followings.count %></td>
           <td>フォロワー数: <%= user.followers.count %></td>
           <td>
             <% unless current_user == user %>
