@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title >Bookers2</title>
@@ -10,8 +11,12 @@
   </head>
 
   <body>
-     <%= render 'layouts/header' %>
-  <main>
+    <header>
+      <%= render 'layouts/header' %>
+    </header>
+    <div class="search-form">
+      <%= render 'layouts/search' %>
+    </div>
     <% if flash[:notice] %>
       <div class="alert alert-success" role="alert">
         <p><%= notice %></p>
@@ -22,9 +27,12 @@
         <p><%= alert %></p>
       </div>
     <% end %>
-    <%= yield %>
-  </main>
-    <%= render 'layouts/footer' %>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 
 </html>

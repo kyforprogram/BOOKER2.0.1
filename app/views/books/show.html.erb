@@ -1,4 +1,3 @@
-
 <div class='container'>
   <div class='row'>
     <div class='col-md-3'>
@@ -11,29 +10,39 @@
         <tbody>
           <tr>
             <td>
-              <%= link_to user_path(@book.user) do %>
-                <%= attachment_image_tag @book.user, :profile_image, fallback: "no-image.png", size:"40x40", class:"bd-placeholder-img align-self-center mx-3"%>
-                <br>
-                <%= @book.user.name %>
-              <% end %>
+            <%= link_to user_path(@book.user) do %>
+            <%= attachment_image_tag @book.user, :profile_image, fallback: "no-image.png", size:"40x40", class:"bd-placeholder-img align-self-center mx-3"%>
+            <br>
+            <%= @book.user.name %>
+            <% end %>
             </td>
             <td>
-              <%= @book.title %>
+            <%= @book.title %>
             </td>
             <td>
-              <%=  simple_format @book.body %>
+            <%=  simple_format @book.body %>
             </td>
+            <td>
+        <td id="book_<%= @book.id %>">
+          <%#= render 'favorites/favorite', book: book %>
+          <%= render partial: 'favorites/favorite', locals: {book: @book} %>
+        </td>
             <% if @book.user_id == current_user.id %>
-            <td>
-              <%= link_to "Edit", edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}"  %>
             </td>
             <td>
-              <%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-sm btn-danger destroy_book_#{@book.id}", 'data-confirm' => "Are you sure?"  %>
+            <%= link_to "Edit", edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}"  %>
+            </td>
+            <td>
+            <%= link_to "Destroy", book_path(@book), method: :delete, class: "btn btn-sm btn-danger destroy_book_#{@book.id}", 'data-confirm' => "Are you sure?"  %>
             </td>
             <% end %>
           </tr>
         </tbody>
       </table>
+      <div id="comment-area">
+        <%= render partial: 'book_comments/index', locals: { book: @book } %>
+      </div>
+        <%= render partial: 'book_comments/form', locals: { book: @book, book_comment: @book_comment } %>
     </div>
   </div>
 </div>

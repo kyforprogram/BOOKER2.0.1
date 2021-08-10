@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="col-xs-12">
+    <% if @model == "user" %>
+      <h2>Users search for '<%= @way %>'</h2>
+      <%= render '/users/index', users: @alldata %>
+      <% elsif @model == "book" %>
+      <h2>Books search for '<%= @keyword %>'</h2>
+      <%= render '/books/index', book: @alldata %>
+    <% end %>
+  </div>
+</div>
