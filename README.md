@@ -9,4 +9,4 @@ Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about St
 				・松橋優希（ゆう）
 				・金子洋平（ヤン）
 ## ER図
-![enter image description here](https://drive.google.com/file/d/1Eh9TcwWtVuj5SMf4gQujW9P2OutLu2aN/view?usp=sharing)
+![Coffee Talk's ER](https://user-images.githubusercontent.com/85179281/130900600-932b6cc0-e9b6-4170-b045-497c24887fc0.png)
