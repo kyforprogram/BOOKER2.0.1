@@ -24,10 +24,14 @@
     $ rails db:seed
 
  - 管理者用アカウント
+	 
 	 1.　メールアドレス :　admin@example.jp
+	 
 	 2.	パスワード：123456
  - 顧客用アカウント
+	 
 	 1.　メールアドレス :　customer1@custmer.jp
+	 
 	 2.	パスワード：123456
 
 
