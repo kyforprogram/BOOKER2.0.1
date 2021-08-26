@@ -1,24 +1,12 @@
-# README
+# Welcome to CoffeeTalk
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
+チーム開発のCoffeeTalkです。CoffeeTalkの由来はチームの一員がコーヒー好きなのとCoffeeTalkというアプリがあるといることでCoffeeTalkという由来のチーム名になりました。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 開発チームメンバー
+リーダー　金山りさ（リサ）
+				・高田知来（とも）
+				・松橋優希（ゆう）
+				・金子洋平（ヤン）
+## ER図
+![enter image description here](https://drive.google.com/file/d/1mkUPWnfzhtqg42WrqAr1ZGmQwq8whokO/view?usp=sharing)
