@@ -9,9 +9,10 @@
 
 # 「CoffeeTalk」チームメンバー
 リーダー　金山りさ（リサ）
-				・高田知来（とも）
-				・松橋優希（ゆう）
-				・金子洋平（ヤン）
+	・高田知来（とも）
+	
+	・松橋優希（ゆう）
+	・金子洋平（ヤン）
 ## ER図
 ![enter image description here](![Coffee Talk's ER](https://user-images.githubusercontent.com/85179281/130900600-932b6cc0-e9b6-4170-b045-497c24887fc0.png))
 
